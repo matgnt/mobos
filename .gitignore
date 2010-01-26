@@ -1,0 +1,6 @@
+bitbake/
+openembedded/
+tmp/
+downloads
+*.swp
+topdir.conf
