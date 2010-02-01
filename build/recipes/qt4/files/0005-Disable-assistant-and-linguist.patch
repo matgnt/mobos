@@ -1,0 +1,35 @@
+From 36ebd0f6ec71adda0dd34806e71ad01b495884b4 Mon Sep 17 00:00:00 2001
+From: Matthias <matgnt@gmail.com>
+Date: Fri, 29 Jan 2010 13:05:35 +0100
+Subject: [PATCH 5/5] Disable assistant and linguist
+
+---
+ tools/tools.pro |    5 +++--
+ 1 files changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/tools/tools.pro b/tools/tools.pro
+index 4cff507..11d9312 100644
+--- a/tools/tools.pro
++++ b/tools/tools.pro
+@@ -3,7 +3,8 @@ TEMPLATE        = subdirs
+ no-png {
+     message("Some graphics-related tools are unavailable without PNG support")
+ } else {
+-     SUBDIRS += assistant \
++     SUBDIRS += \
++#		assistant \
+ 		pixeltool \
+ 		porting \
+                 qtestlib \
+@@ -13,7 +14,7 @@ no-png {
+      } else {
+          SUBDIRS += designer
+      }
+-     SUBDIRS     += linguist
++#     SUBDIRS     += linguist
+      symbian: SUBDIRS = designer
+      wince*: SUBDIRS = qtestlib designer
+      unix:!mac:!embedded:contains(QT_CONFIG, qt3support):SUBDIRS += qtconfig
+-- 
+1.6.3.3
+
