@@ -94,3 +94,4 @@ do_install() {
     touch ${D}/${libdir}/fonts/fontdir
 }
 
+FILES_${QT_BASE_NAME}-tools                += " ${bindir}/qmlviewer"
