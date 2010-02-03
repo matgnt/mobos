@@ -1,10 +1,7 @@
-DEFAULT_PREFERENCE = "-1"
-
-QT_RECIPE_DIR = ${TOPDIR}/openembedded/recipes/qt4
-require ${QT_RECIPE_DIR}/qt4-tools-native.inc
+require qt4-tools-native.inc
 
 LICENSE = "LGPLv2.1 GPLv3"
-PR = "${INC_PR}.0"
+PR = "r10.0"
 
 SRC_URI = "\
 #	git://gitorious.org/+qt-kinetic-developers/qt/kinetic.git;protocol=git;branch=kinetic-declarativeui \

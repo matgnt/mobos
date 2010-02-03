@@ -1,20 +1,37 @@
+DESCRIPTION = "Qt QML is a new eye candy gui for Qt -- this is the X11 version."
+SECTION = "x11/libs"
+PRIORITY = "optional"
+HOMEPAGE = "http://qt.nokia.com"
+LICENSE = "GPL"
+DEPENDS += "qt4-tools-native virtual/libx11 fontconfig xft libxext libxrender libxrandr libxcursor"
+PROVIDES = "qt4-qml qt4 qt4x11"
+
 QT_RECIPE_DIR = ${TOPDIR}/openembedded/recipes/qt4
 
-require qt4-x11-free.inc
-PR = "${INC_PR}.1"
+#require qt4-x11-free.inc
+#inherit qt4x11
+require qt4.inc
+
+inherit qmake2
+# Qt4 uses atomic instructions not supported in thumb mode
+ARM_INSTRUCTION_SET = "arm"
+
+
+PR = "r14.1"
 
 QT_CONFIG_FLAGS += " \
  -no-embedded \
  -xrandr \
- -x11"
+ -x11 \
+ -no-opengl \
+ -no-xinerama \
+ -no-xkb \
+"
 
-#inherit qt4x11
-#PROVIDES = "qt4"
-
-#DEFAULT_PREFERENCE = "1"
 
 SRC_URI = "\
 	git://gitorious.org/+qt-kinetic-developers/qt/kinetic.git;protocol=git;tag=123420ab170376cbd4e2e2c7676f383daa36bb95 \
+#	git://gitorious.org/+qt-kinetic-developers/qt/kinetic.git;protocol=git;branch=kinetic-declarativeui \
            file://0001-cross-compile.patch;patch=1 \
 #           file://0002-fix-resinit-declaration.patch;patch=1 \
            file://0004-no-qmake.patch;patch=1 \
@@ -68,8 +85,9 @@ do_install() {
     # /home/devel/toshiba2/tmp/work/armv4t-oe-linux-gnueabi/qt4-git-r14.1/image/home/devel/toshiba2/tmp/staging/x86_64-linux
     # The quick and dirty fix is just to copy the files to the place they should be installed to.
     #
-    # oenote ${COPY_PREFIX}
-    cp -a ${D}/${COPY_PREFIX}/* ${D}
+    oenote "COPY_PREFIX: ${COPY_PREFIX}"
+    install -d ${D}/usr
+    cp -a ${D}/${COPY_PREFIX}/* ${D}/usr
 
     # These are host binaries, we should only use them in staging
     rm -rf ${D}/${bindir}/qmake
