@@ -4,8 +4,8 @@ all: topdir image
 
 .PHONY: image
 image:
-	(source build/env.sh ; \
-	bitbake micro-image)
+	(source build/env_angstrom.sh ; \
+	bitbake mobos-image)
 
 .PHONY: topdir
 topdir:
@@ -25,9 +25,9 @@ setup-openembedded openembedded/.git/config:
 	[ -e openembedded/.git/config ] || \
 		( git clone git://git.openembedded.net/openembedded openembedded )
 	( cd openembedded && \
-		( git branch | egrep -e ' org.openembedded.dev$$' > /dev/null || \
-		git checkout -b org.openembedded.dev --track origin/org.openembedded.dev ))
-	( cd openembedded && git checkout org.openembedded.dev )
+		 git branch | egrep -e ' stable2009$$' > /dev/null || \
+		git checkout -b stable2009 --track origin/stable/2009 )
+	( cd openembedded && git checkout stable2009 )
 	touch openembedded/.git/config
 
 .PHONY: update-bitbake
