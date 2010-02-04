@@ -2,14 +2,22 @@
 
 require recipes/images/base-image.bb
 
-IMAGE_INSTALL += "\
-	qt4-qml \
-	"
+XSERVER ?= "xserver-kdrive-fbdev"
 
-# TODO: check
-#PREFERRED_VERSION_qt4-qml = "git"
-#PREFERRED_VERSION_qt4-tools-native = "git"
-#PREFERRED_PROVIDER_qt4x11 = "qt4-qml"
+IMAGE_INSTALL += "\
+    ${XSERVER} \
+    qt4-qml \
+    ttf-dejavu-sans \
+    ttf-dejavu-sans-mono \
+    task-fonts-truetype-core \
+    font-cursor-misc \
+    tslib \
+#    tslib-calibrate \
+    xtscal \
+#    pointercal \
+    libpng12 \
+    jpeg \
+    "
 
 export IMAGE_BASENAME = "mobos-image"
 
@@ -30,3 +38,6 @@ mobos_rootfs_postprocess() {
 }
 # register the above command for execution
 ROOTFS_POSTPROCESS_COMMAND += "mobos_rootfs_postprocess"
+
+# TODO: copied, we need it?
+#IMAGE_PREPROCESS_COMMAND = "create_etc_timestamp"

@@ -10,7 +10,7 @@ QT_CONFIG_FLAGS += "-release -no-cups -no-accessibility -reduce-relocations \
                     -shared -no-nas-sound -no-sm -no-nis \
                     -qt-gif -system-libjpeg -system-libpng -system-zlib \
                     -no-sql-ibase -no-sql-mysql -no-sql-odbc -no-sql-psql -plugin-sql-sqlite -plugin-sql-sqlite2 \
-                    -no-pch -qdbus -stl -glib -phonon -webkit -no-xmlpatterns"
+                    -no-pch -qdbus -stl -glib -phonon -webkit"
 
 EXTRA_OEMAKE = "-e"
 
@@ -23,7 +23,7 @@ EXTRA_ENV = 'QMAKE="${STAGING_BINDIR_NATIVE}/qmake2 -after \
 export QT_CONF_PATH="${WORKDIR}/qt.conf"
 
 # Library packages
-QT_LIB_NAMES = "Qt3Support QtAssistantClient QtCLucene QtCore QtDBus QtDesigner QtDesignerComponents QtGui QtHelp QtNetwork QtOpenGL QtScript QtScriptTools QtSql QtSvg QtTest QtUiTools QtWebKit QtXml phonon QtMultimedia QtOpenVG"
+QT_LIB_NAMES = "QtDeclarative Qt3Support QtAssistantClient QtCLucene QtCore QtDBus QtDesigner QtDesignerComponents QtGui QtHelp QtNetwork QtOpenGL QtScript QtScriptTools QtSql QtSvg QtTest QtUiTools QtWebKit QtXml phonon QtMultimedia QtOpenVG"
 
 QT_EXTRA_LIBS = "pvrQWSWSEGL"
 

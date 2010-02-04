@@ -19,6 +19,11 @@ ARM_INSTRUCTION_SET = "arm"
 
 PR = "r14.1"
 
+QT_BASE_NAME = "qt4"
+QT_BASE_LIB  = "libqt"
+QT_DIR_NAME = "qt4"
+QT_LIBINFIX = ""
+
 QT_CONFIG_FLAGS += " \
  -no-embedded \
  -xrandr \
@@ -86,11 +91,12 @@ do_install() {
     # The quick and dirty fix is just to copy the files to the place they should be installed to.
     #
     oenote "COPY_PREFIX: ${COPY_PREFIX}"
-    install -d ${D}/usr
-    cp -a ${D}/${COPY_PREFIX}/* ${D}/usr
+    install -d ${D}/${prefix}
+    cp -a ${D}/${COPY_PREFIX}/* ${D}/${prefix}
 
     # These are host binaries, we should only use them in staging
     rm -rf ${D}/${bindir}/qmake
+    # TODO: delete other tools, e.g. moc,...
 
     # fix pkgconfig, libtool and prl files
     sed -i -e s#-L${S}/lib##g \
@@ -113,3 +119,8 @@ do_install() {
 }
 
 FILES_${QT_BASE_NAME}-tools                += " ${bindir}/qmlviewer"
+
+# overwrite rm_work while developing to avoid deletion after a successful build
+do_rm_work() {
+}
+
