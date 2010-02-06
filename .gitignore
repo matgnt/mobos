@@ -5,3 +5,4 @@ downloads
 *.swp
 topdir.conf
 angstrom-dev/
+angstrom-dev-oe/
