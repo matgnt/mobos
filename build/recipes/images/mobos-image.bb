@@ -20,7 +20,7 @@ IMAGE_INSTALL += "\
 #    uucp \
     cu \
 #    ofono \
-    frameworkd \
+#    frameworkd \
     "
 
 export IMAGE_BASENAME = "mobos-image"

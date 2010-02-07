@@ -15,10 +15,12 @@ if [ -z ${ORG_LD_LIBRARY_PATH} ] ; then
 	export ORG_LD_LIBRARY_PATH
 fi
 
+# stable
 #PATH=${OETREE}/openembedded/bitbake/bin:${ORG_PATH}
+# development branch
 PATH=${OETREE}/bitbake/bin:${ORG_PATH}
 
-cd $PKGDIR
+#cd $PKGDIR
 
 LD_LIBRARY_PATH=
 export PATH LD_LIBRARY_PATH BBPATH
