@@ -3,7 +3,7 @@ BITBAKE_VERSION = branches/bitbake-1.8
 all: topdir image
 
 .PHONY: image
-image:
+image: topdir
 	(source build/env_angstrom.sh ; \
 	bitbake mobos-image)
 

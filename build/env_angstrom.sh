@@ -1,4 +1,7 @@
-export OETREE="${HOME}/toshiba2"
+source ./topdir.conf
+export OETREE=$TOPDIR
+
+echo "OETREE: ${OETREE}"
 
 BBPATH=${OETREE}/:${OETREE}/build/:${OETREE}/openembedded/
 PKGDIR=${OETREE}/build/ 
@@ -16,9 +19,9 @@ if [ -z ${ORG_LD_LIBRARY_PATH} ] ; then
 fi
 
 # stable
-#PATH=${OETREE}/openembedded/bitbake/bin:${ORG_PATH}
+PATH=${OETREE}/openembedded/bitbake/bin:${ORG_PATH}
 # development branch
-PATH=${OETREE}/bitbake/bin:${ORG_PATH}
+#PATH=${OETREE}/bitbake/bin:${ORG_PATH}
 
 #cd $PKGDIR
 
