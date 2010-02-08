@@ -78,7 +78,7 @@ do_compile() {
     oe_runmake ${EXTRA_ENV}
 }
 
-#COPY_PREFIX = "$(qmake2 -query QT_INSTALL_PREFIX)"
+COPY_PREFIX = "$(qmake2 -query QT_INSTALL_PREFIX)"
 
 # due to prolems with install we have to overwrite the qt4.inc function
 do_install() {
@@ -90,10 +90,10 @@ do_install() {
     # /home/devel/toshiba2/tmp/work/armv4t-oe-linux-gnueabi/qt4-git-r14.1/image/home/devel/toshiba2/tmp/staging/x86_64-linux
     # The quick and dirty fix is just to copy the files to the place they should be installed to.
     #
-    #oenote "COPY_PREFIX: ${COPY_PREFIX}"
-    #install -d ${D}/${prefix}
-    #cp -a ${D}/${COPY_PREFIX}/* ${D}/${prefix}
-    # no longer necessary with org.openembedded branch.
+    oenote "COPY_PREFIX: ${COPY_PREFIX}"
+    install -d ${D}/${prefix}
+    cp -a ${D}/${COPY_PREFIX}/* ${D}/${prefix}
+    # no longer necessary with org.openembedded branch, but with stable2009 - TODO: solve somehow
 
     # These are host binaries, we should only use them in staging
     rm -rf ${D}/${bindir}/qmake
