@@ -25,9 +25,9 @@ setup-openembedded openembedded/.git/config:
 	[ -e openembedded/.git/config ] || \
 		( git clone git://git.openembedded.net/openembedded openembedded )
 	( cd openembedded && \
-		 git branch | egrep -e ' stable2009$$' > /dev/null || \
-		git checkout -b stable2009 --track origin/stable/2009 )
-	( cd openembedded && git checkout stable2009 )
+		 git branch | egrep -e ' org.openembedded.dev$$' > /dev/null || \
+		git checkout -b org.openembedded.dev --track origin/org.openembedded.dev )
+	( cd openembedded && git checkout org.openembedded.dev )
 	touch openembedded/.git/config
 
 .PHONY: update-bitbake
