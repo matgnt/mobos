@@ -2,6 +2,12 @@
 
 require recipes/images/base-image.bb
 
+# to build jffs2 images
+RDEPENDS += " mtd-utils-native"
+
+# to build uImage for u-boot - mkimage
+RDEPENDS += " u-boot-mkimage-native"
+
 XSERVER ?= "xserver-kdrive-fbdev"
 
 IMAGE_INSTALL += "\
