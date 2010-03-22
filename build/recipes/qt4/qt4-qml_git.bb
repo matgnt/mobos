@@ -35,8 +35,7 @@ QT_CONFIG_FLAGS += " \
 
 
 SRC_URI = "\
-	git://gitorious.org/+qt-kinetic-developers/qt/kinetic.git;protocol=git;tag=123420ab170376cbd4e2e2c7676f383daa36bb95 \
-#	git://gitorious.org/+qt-kinetic-developers/qt/kinetic.git;protocol=git;branch=kinetic-declarativeui \
+	git://gitorious.org/qt/qt.git;protocol=git;tag=55fb13a62a531a7400f8dc602fde5f2529aaaad4 \
            file://0001-cross-compile.patch;patch=1 \
 #           file://0002-fix-resinit-declaration.patch;patch=1 \
            file://0004-no-qmake.patch;patch=1 \
@@ -119,7 +118,7 @@ do_install() {
     touch ${D}/${libdir}/fonts/fontdir
 }
 
-FILES_${QT_BASE_NAME}-tools                += " ${bindir}/qmlviewer"
+FILES_${QT_BASE_NAME}-tools                += " ${bindir}/qml"
 
 # overwrite rm_work while developing to avoid deletion after a successful build
 do_rm_work() {

@@ -12,21 +12,17 @@ XSERVER ?= "xserver-kdrive-fbdev"
 
 IMAGE_INSTALL += "\
     ${XSERVER} \
-    qt4-qml \
-    ttf-dejavu-sans \
-    ttf-dejavu-sans-mono \
+    libqtdeclarative4 \
+    qt4-tools \
+#    ttf-dejavu-sans \
+#    ttf-dejavu-sans-mono \
     task-fonts-truetype-core \
 #    font-cursor-misc \
     tslib \
-#    tslib-calibrate \
     xtscal \
-#    pointercal \
     libpng12 \
     jpeg \
-#    uucp \
-    cu \
 #    ofono \
-#    frameworkd \
     "
 
 export IMAGE_BASENAME = "mobos-image"
