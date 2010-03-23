@@ -22,7 +22,7 @@ IMAGE_INSTALL += "\
     xtscal \
     libpng12 \
     jpeg \
-#    ofono \
+    ofono \
     "
 
 export IMAGE_BASENAME = "mobos-image"
@@ -38,6 +38,14 @@ mobos_rootfs_postprocess() {
     echo "    netmask 255.255.255.0" >> ./etc/network/interfaces
     echo "    network 192.168.1.0" >> ./etc/network/interfaces
     echo "    gateway 192.168.1.1" >> ./etc/network/interfaces
+
+    # ofono configuration
+    mkdir -p ./etc/ofono
+    echo "[phonesim]" 		> ./etc/ofono/modem.conf
+    echo "Driver=phonesim"	>> ./etc/ofono/modem.conf
+    echo "Address=192.168.1.1"	>> ./etc/ofono/modem.conf
+    echo "Port=12345"		>> ./etc/ofono/modem.conf
+
 
     cd $curdir	
 }
