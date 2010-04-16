@@ -35,8 +35,8 @@ QT_CONFIG_FLAGS += " \
 
 
 SRC_URI = "\
-#	git://gitorious.org/qt/qt.git;protocol=git;tag=3ba4e43507cc2ca1f642a45aec4fda4bd3572678 \
-	git://gitorious.org/qt/qt.git;protocol=git;tag=4.7 \
+	git://gitorious.org/qt/qt.git;protocol=git;tag=3ba4e43507cc2ca1f642a45aec4fda4bd3572678 \
+#	git://gitorious.org/qt/qt.git;protocol=git;tag=4.7 \
            file://0001-cross-compile.patch;patch=1 \
 #           file://0002-fix-resinit-declaration.patch;patch=1 \
            file://0004-no-qmake.patch;patch=1 \
