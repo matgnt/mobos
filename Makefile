@@ -23,11 +23,11 @@ setup-bitbake bitbake/.git/config:
 .PRECIOUS: openembedded/.git/config
 setup-openembedded openembedded/.git/config:
 	[ -e openembedded/.git/config ] || \
-		( git clone git://git.openembedded.net/openembedded openembedded )
+		( git clone git://gitorious.org/~matgnt/angstrom/matgnts-openembedded.git openembedded )
 	( cd openembedded && \
-		 git branch | egrep -e ' org.openembedded.dev$$' > /dev/null || \
-		git checkout -b org.openembedded.dev --track origin/org.openembedded.dev )
-	( cd openembedded && git checkout org.openembedded.dev )
+		 git branch | egrep -e ' org.openembedded.dev-matgnt-upstream$$' > /dev/null || \
+		git checkout -b org.openembedded.dev-matgnt-upstream --track origin/org.openembedded.dev-matgnt-upstream )
+	( cd openembedded && git checkout org.openembedded.dev-matgnt-upstream )
 	touch openembedded/.git/config
 
 .PHONY: update-bitbake
