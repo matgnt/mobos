@@ -23,6 +23,7 @@ IMAGE_INSTALL += "\
     libpng12 \
     jpeg \
     ofono \
+    mobos-gui \
     "
 
 export IMAGE_BASENAME = "mobos-image"
