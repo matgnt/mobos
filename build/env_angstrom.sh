@@ -3,9 +3,7 @@ export OETREE=$TOPDIR
 
 echo "OETREE: ${OETREE}"
 
-BBPATH=${OETREE}/:${OETREE}/build/:${OETREE}/openembedded/
-PKGDIR=${OETREE}/build/ 
-DL_DIR=${OETREE}/downloads
+BBPATH=${OETREE}/build/:${OETREE}/openembedded/
 echo Setting up dev env for Ångström
 
 if [ -z ${ORG_PATH} ] ; then
@@ -18,12 +16,7 @@ if [ -z ${ORG_LD_LIBRARY_PATH} ] ; then
 	export ORG_LD_LIBRARY_PATH
 fi
 
-# stable
-#PATH=${OETREE}/openembedded/bitbake/bin:${ORG_PATH}
-# development branch
 PATH=${OETREE}/bitbake/bin:${ORG_PATH}
-
-#cd $PKGDIR
 
 LD_LIBRARY_PATH=
 export PATH LD_LIBRARY_PATH BBPATH
