@@ -68,6 +68,11 @@ image: topdir
 topdir:
 	(echo "TOPDIR='${PWD}'" > topdir.conf)
 
+.PHONY: flashable-topas910-image
+flashable-topas910-image:
+	(source build/env_angstrom.sh ; \
+	bitbake create-flashable-topas910-image )
+
 .PHONY: setup
 setup-bitbake bitbake/.git/config:
 	[ -e bitbake/.git/config ] || \
