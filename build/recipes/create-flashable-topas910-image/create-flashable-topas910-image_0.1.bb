@@ -1,9 +1,8 @@
-DESCRIPTION = "Lowlevel - a simple bootloader for the Toshiba Topas 910."
+DESCRIPTION = "Lowlevel - Assemble a binary flashable file for the Topas910-Board with u-boot and kernel image included."
 SECTION = "bootloaders"
 PRIORITY = "optional"
 LICENSE = "BSD"
-PROVIDES = "virtual/bootloader"
-DEPENDS = "virtual/kernel"
+DEPENDS = "virtual/kernel virtual/bootloader"
 PR = "r0"
 
 ALLOW_EMTPTY = "1"
