@@ -36,10 +36,10 @@ mobos_rootfs_postprocess() {
     
     # create/overwrite network configuration
     echo "iface eth0 inet static" > ./etc/network/interfaces
-    echo "    address 192.168.1.2" >> ./etc/network/interfaces
+    echo "    address 192.168.0.202" >> ./etc/network/interfaces
     echo "    netmask 255.255.255.0" >> ./etc/network/interfaces
-    echo "    network 192.168.1.0" >> ./etc/network/interfaces
-    echo "    gateway 192.168.1.1" >> ./etc/network/interfaces
+    echo "    network 192.168.0.0" >> ./etc/network/interfaces
+    echo "    gateway 192.168.0.200" >> ./etc/network/interfaces
 
     # ofono configuration
     mkdir -p ./etc/ofono
