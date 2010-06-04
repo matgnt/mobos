@@ -35,7 +35,8 @@ mobos_rootfs_postprocess() {
     cd ${IMAGE_ROOTFS}
     
     # create/overwrite network configuration
-    echo "iface eth0 inet static" > ./etc/network/interfaces
+    echo "auto eth0" > ./etc/network/interfaces
+    echo "iface eth0 inet static" >> ./etc/network/interfaces
     echo "    address 192.168.0.202" >> ./etc/network/interfaces
     echo "    netmask 255.255.255.0" >> ./etc/network/interfaces
     echo "    network 192.168.0.0" >> ./etc/network/interfaces
