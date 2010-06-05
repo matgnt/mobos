@@ -102,7 +102,7 @@ update-openembedded: openembedded/.git/config
 
 .PHONY: setup-ubuntu-packages
 setup-ubuntu-packages:
-	( sudo apt-get install git-core build-essential help2man diffstat texi2html texinfo cvs subversion gawk )
+	( sudo apt-get install git-core build-essential help2man diffstat texi2html texinfo cvs subversion gawk chrpath )
 
 # python-psyco is not available for amd64
 .PHONY: setup-ubuntu-optional
