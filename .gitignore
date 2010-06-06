@@ -8,3 +8,6 @@ angstrom-dev/
 angstrom-dev-oe/
 angstrom-stable/
 angstrom-oe-dev/
+angstrom-oe-qt
+depends.dot
+task-depends.dot
