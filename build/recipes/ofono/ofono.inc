@@ -6,5 +6,8 @@ DEPENDS = "dbus"
 
 SRC_URI = "http://www.kernel.org/pub/linux/network/${PN}/${PN}-${PV}.tar.bz2"
 
+EXTRA_OECONF += '--enable-debug \
+                --enable-test'
+
 inherit autotools
 

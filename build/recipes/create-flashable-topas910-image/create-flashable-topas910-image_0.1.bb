@@ -41,7 +41,7 @@ do_deploy () {
 	cat flashimage-topas910.bin.pad2 ${JFFS_MY_IMAGE_FILENAME} /tmp/pad > /tmp/flashimage-topas910.bin.pad3
 	
 	# cut the image at the end - minimum: 5504k (see dd above) + size of .jffs file
-	dd if=/tmp/flashimage-topas910.bin.pad3 of=${DEPLOY_DIR_IMAGE}/topas910-uboot-kernel-fs_nor.img bs=1024k count=12
+	dd if=/tmp/flashimage-topas910.bin.pad3 of=${DEPLOY_DIR_IMAGE}/topas910-uboot-kernel-fs_nor.img bs=1024k count=25
 	rm flashimage-topas910.bin.pad*
 	rm /tmp/pad
 }

@@ -5,10 +5,12 @@ LICENSE = "GPL"
 #DEPENDS = "qt4-x11-free ofono"
 PR = "r2"
 
-SRC_URI = "git://github.com/matgnt/mobos-gui.git;protocol=git;tag=master \
-	"
+#SRC_URI = "git://github.com/matgnt/mobos-gui.git;protocol=git;tag=master \
+#	"
+S = "${WORKDIR}/git"
 
-S = ${WORKDIR}/git
+SRC_URI = "git:///home/data/projects/topas/mobos-gui/;tag=master \
+	"
 
 inherit qmake2
 # Qt4 uses atomic instructions not supported in thumb mode
